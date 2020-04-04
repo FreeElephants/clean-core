@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source .env
+
+mkdir -p "$HOME/.npm/"
+
+test -t 1 && USE_TTY="--tty"
+
+docker run --rm --interactive ${USE_TTY} \
+    --init \
+    --user `id -u`:`id -g` \
+    --volume $PWD:/var/www \
+    --workdir /var/www \
+    --volume "$HOME/.npm:/.npm" \
+    --env-file .env \
+    ${NODE_DEV_IMAGE}:${REVISION} npm "$@"

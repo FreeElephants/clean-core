@@ -1,0 +1,20 @@
+{
+  "name": "clean-core",
+  "version": "0.0.1",
+  "description": "Framework for html apps",
+  "main": "''",
+  "directories": {
+    "test": "__tests__"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "samizdam",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "jest": "^25.2.7",
+    "jsdom": "^16.2.2",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3"
+  }
+}
