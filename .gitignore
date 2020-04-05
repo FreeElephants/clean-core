@@ -2,4 +2,6 @@
 
 /.idea/
 
+/coverage/
+
 /node_modules/
