@@ -1,7 +1,8 @@
 import {RouteInterface} from "./RouteInterface";
 import {RouteHandlerInterface} from "./RouteHandlerInterface";
+import {RouterInterface} from "./RouterInterface";
 
-export class Router {
+export class Router implements RouterInterface {
     private routesMap: {
         [key: string]: RouteInterface;
     } = {};
