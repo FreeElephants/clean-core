@@ -1,10 +1,12 @@
 {
   "name": "clean-core",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Framework for html apps",
   "directories": {
     "test": "__tests__"
   },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest"
   },
@@ -14,9 +16,13 @@
     "@fluffy-spoon/substitute": "^1.118.0",
     "@types/jest": "^25.2.1",
     "@types/jsdom": "^12.2.4",
+    "create-ts-index": "^1.13.2",
     "jest": "^25.2.7",
     "jsdom": "^16.2.2",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
-  }
+  },
+  "files": [
+    "/lib/**/*"
+  ]
 }

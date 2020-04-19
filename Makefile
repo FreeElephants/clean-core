@@ -4,8 +4,8 @@ install:
 	cp -p docker.env .env
 	npm install
 
-run:
-	docker-compose up -d
+build:
+	npx tsc
 
 test:
 	npx jest
