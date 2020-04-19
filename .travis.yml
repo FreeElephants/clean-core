@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "10"
+  - "12"
+  - "13"
+  - "14"
+
+before_script:
+  - "make build"
+
+script:
+  - "make test"
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+deploy:
+  provider: npm
+  api_key: $NPMJS_COM_API_TOCKEN
+  email: "samizdam@inbox.ru"
+  skip_cleanup: true
+  on:
+    tags: true
