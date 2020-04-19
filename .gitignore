@@ -1,7 +1,11 @@
 /.env
 
+/.npmrc
+
 /.idea/
 
 /coverage/
+
+/lib/
 
 /node_modules/

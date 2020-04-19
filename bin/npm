@@ -4,6 +4,8 @@ source .env
 
 mkdir -p "$HOME/.npm/"
 
+touch .npmrc
+
 test -t 1 && USE_TTY="--tty"
 
 docker run --rm --interactive ${USE_TTY} \
@@ -12,5 +14,6 @@ docker run --rm --interactive ${USE_TTY} \
     --volume $PWD:/var/www \
     --workdir /var/www \
     --volume "$HOME/.npm:/.npm" \
+    --volume "$PWD/.npmrc:/home/node/.npmrc" \
     --env-file .env \
     ${NODE_DEV_IMAGE}:${REVISION} npm "$@"
