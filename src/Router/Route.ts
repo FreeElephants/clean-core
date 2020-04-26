@@ -1,4 +1,3 @@
-import {RouteHandler} from "./RouteHandler";
 import {RouteHandlerFactoryInterface} from "./RouteHandlerFactoryInterface";
 import {RouteInterface} from "./RouteInterface";
 import {RouteHandlerInterface} from "./RouteHandlerInterface";
