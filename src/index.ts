@@ -7,6 +7,9 @@ export {
 } from './Application';
 
 export {
+    BasePage,
+    EventHandlerMap,
+    PageBehaviorEvent,
     PageInterface,
 } from './Page';
 
