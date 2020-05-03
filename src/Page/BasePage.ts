@@ -1,13 +1,19 @@
 import {EventHandlerMap} from "./EventHandlerMap";
 import {PageBehaviorEvent} from "./PageBehaviorEvent";
 import {PageInterface} from "./PageInterface";
-import Handlebars = require("handlebars");
+import {TemplateEngineInterface} from "../Render/TemplateEngineInterface";
 
 /**
  * Supertype for Page Objects.
  * Page Object render view to Window, and can provide interactive behavior for document.
  */
 export abstract class BasePage implements PageInterface {
+
+    private static templateEngine: TemplateEngineInterface;
+
+    static setTemplateEngine(templateEngine: TemplateEngineInterface): void {
+        this.templateEngine = templateEngine;
+    }
 
     abstract getViewModel(): object;
 
@@ -34,7 +40,7 @@ export abstract class BasePage implements PageInterface {
     }
 
     protected renderTemplate(template: string, viewModel: object): string {
-        return Handlebars.compile(template)(viewModel);
+        return BasePage.templateEngine.render(template, viewModel);
     }
 
     private initBehavior(window: Window) {
