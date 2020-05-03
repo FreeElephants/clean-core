@@ -1,6 +1,6 @@
 import {ApplicationInterface} from "./ApplicationInterface";
-import {RouterInterface} from "../Router/RouterInterface";
-import {RouteNotFoundException} from "./Exception/RouteNotFoundException";
+import {RouterInterface} from "../Router";
+import {RouteNotFoundException} from "./Exception";
 
 export class Application implements ApplicationInterface {
     run(router: RouterInterface, window: Window): void {

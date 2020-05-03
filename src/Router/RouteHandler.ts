@@ -1,4 +1,4 @@
-import {PageInterface} from "../Page/PageInterface";
+import {PageInterface} from "../Page";
 import {RouteHandlerInterface} from "./RouteHandlerInterface";
 
 export abstract class RouteHandler<RouteParams> implements RouteHandlerInterface<RouteParams> {

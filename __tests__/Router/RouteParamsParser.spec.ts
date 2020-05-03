@@ -1,4 +1,4 @@
-import {RouteParamParser} from "../../src/Router/RouteParamParser";
+import {RouteParamParser} from "../../src/Router";
 import {JSDOM} from "jsdom";
 
 describe('Route params parsing', () => {

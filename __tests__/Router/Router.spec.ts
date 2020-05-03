@@ -1,7 +1,7 @@
-import {Router} from "../../src/Router/Router";
-import {RouteHandler} from "../../src/Router/RouteHandler";
-import {PageInterface} from "../../src/Page/PageInterface";
-import {Route} from "../../src/Router/Route";
+import {Router} from "../../src/Router";
+import {RouteHandler} from "../../src/Router";
+import {PageInterface} from "../../src/Page";
+import {Route} from "../../src/Router";
 
 describe('Router', () => {
     it('add', () => {

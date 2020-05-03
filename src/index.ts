@@ -7,8 +7,21 @@ export {
 } from './Application';
 
 export {
+    BasePage,
+    EventHandlerMap,
+    PageBehaviorEvent,
     PageInterface,
 } from './Page';
+
+export {
+    ContentElementProviderInterface,
+    TemplateElementProviderInterface,
+    TemplateEngineInterface,
+    CssSelectorBasedTemplateElementProvider,
+    CssSelectorBasedContentElementProvider,
+    HandlebarsAdapter,
+    Dummy,
+} from './Render'
 
 export {
     RouterInterface,
