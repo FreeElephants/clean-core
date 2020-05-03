@@ -14,6 +14,16 @@ export {
 } from './Page';
 
 export {
+    ContentElementProviderInterface,
+    TemplateElementProviderInterface,
+    TemplateEngineInterface,
+    CssSelectorBasedTemplateElementProvider,
+    CssSelectorBasedContentElementProvider,
+    HandlebarsAdapter,
+    Dummy,
+} from './Render'
+
+export {
     RouterInterface,
     Router,
     RouteInterface,
