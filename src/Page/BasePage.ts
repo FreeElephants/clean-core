@@ -2,6 +2,11 @@ import {EventHandlerMap} from "./EventHandlerMap";
 import {PageBehaviorEvent} from "./PageBehaviorEvent";
 import {PageInterface} from "./PageInterface";
 import {TemplateEngineInterface} from "../Render/TemplateEngineInterface";
+import {TemplateElementProviderInterface} from "../Render/TemplateElementProviderInterface";
+import {ContentElementProviderInterface} from "../Render/ContentElementProviderInterface";
+import {HandlebarsAdapter} from "../Render/Handlebars/HandlebarsAdapter";
+import {CssSelectorBasedTemplateElementProvider} from "../Render/CssSelectorBasedTemplateElementProvider";
+import {CssSelectorBasedContentElementProvider} from "../Render/CssSelectorBasedContentElementProvider";
 
 /**
  * Supertype for Page Objects.
@@ -9,10 +14,20 @@ import {TemplateEngineInterface} from "../Render/TemplateEngineInterface";
  */
 export abstract class BasePage implements PageInterface {
 
-    private static templateEngine: TemplateEngineInterface;
+    private static templateEngine: TemplateEngineInterface = new HandlebarsAdapter();
+    private static templateElementProvider: TemplateElementProviderInterface = new CssSelectorBasedTemplateElementProvider();
+    private static contentElementProvider: ContentElementProviderInterface = new CssSelectorBasedContentElementProvider();
 
     static setTemplateEngine(templateEngine: TemplateEngineInterface): void {
         this.templateEngine = templateEngine;
+    }
+
+    static setTemplateElementProvider(provider: TemplateElementProviderInterface) {
+        this.templateElementProvider = provider;
+    }
+
+    static setContentElementProvider(provider: ContentElementProviderInterface) {
+        this.contentElementProvider = provider;
     }
 
     abstract getViewModel(): object;
@@ -32,11 +47,11 @@ export abstract class BasePage implements PageInterface {
     }
 
     protected getTemplateElement(window: Window): Element {
-        return window.document.querySelector("#template");
+        return BasePage.templateElementProvider.getTemplateElement(window);
     }
 
     protected getContentElement(window: Window): Element {
-        return window.document.querySelector("#content");
+        return BasePage.contentElementProvider.getContentElement(window)
     }
 
     protected renderTemplate(template: string, viewModel: object): string {
