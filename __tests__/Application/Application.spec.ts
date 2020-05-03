@@ -1,8 +1,8 @@
 import {Arg, Substitute} from "@fluffy-spoon/substitute";
-import {RouterInterface} from "../../src/Router/RouterInterface";
+import {RouterInterface} from "../../src/Router";
 import {JSDOM} from "jsdom";
-import {Application} from "../../src/Application/Application";
-import {RouteNotFoundException} from "../../src/Application/Exception/RouteNotFoundException";
+import {Application} from "../../src/Application";
+import {RouteNotFoundException} from "../../src/Application/Exception";
 
 describe('Test application run', () => {
     it('test call router', () => {
