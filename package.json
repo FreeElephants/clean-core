@@ -16,9 +16,9 @@
     "@fluffy-spoon/substitute": "^1.118.0",
     "@types/jest": "^25.2.1",
     "@types/jsdom": "^12.2.4",
-    "create-ts-index": "^1.13.2",
+    "create-ts-index": "^1.14.0",
     "jest": "^25.2.7",
-    "jsdom": "^16.2.2",
+    "jsdom": "^20.0.2",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
   },
