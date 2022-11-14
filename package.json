@@ -13,7 +13,7 @@
   "author": "samizdam",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "@fluffy-spoon/substitute": "^1.208.0",
+    "@fluffy-spoon/substitute": "^1.118.0",
     "@types/jest": "^25.2.1",
     "@types/jsdom": "^12.2.4",
     "create-ts-index": "^1.14.0",
