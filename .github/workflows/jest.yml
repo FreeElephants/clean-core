@@ -10,11 +10,10 @@ jobs:
     strategy:
       matrix:
         node:
-          - 20.18.1
+          - 20
           - 21
           - 22
           - 23
-          - 24
     name: Node ${{ matrix.node }} sample
     steps:
       - uses: actions/checkout@v4
