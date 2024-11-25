@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         node:
-          - 20
+          - 20.18.1
           - 21
           - 22
           - 23
