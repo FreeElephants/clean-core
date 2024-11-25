@@ -6,11 +6,20 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node:
+          - 20
+          - 21
+          - 22
+          - 23
+          - 24
+    name: Node ${{ matrix.node }} sample
     steps:
       - uses: actions/checkout@v4
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ matrix.node }}
       - run: npm install
       - run: npm test
